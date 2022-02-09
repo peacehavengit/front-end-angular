@@ -1,0 +1,94 @@
+/* Add padding to containers */
+
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    /* background: #f1f1f1; */
+}
+
+/* input[type=text]:focus,
+input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+} */
+
+/* Set a style for the submit button */
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+.form-note {
+    color: #e8e8e8;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.left-img-box {
+    max-width: 95%;
+    /* margin-left: auto; */
+    /* padding-top: 50px; */
+
+}
+
+.login-div {
+    max-width: 75%;
+    margin: 30px auto;
+    align-items: center;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.resistar-text{
+    color: #fff;
+}
+.wd-100 {
+    width: 100% !important;
+}
+.mat-input-element {
+    caret-color: #ffffff;
+}
+.custom-inputbox
+{
+    height: 45px;
+    color: #323d64;
+    border: 1px solid #d4d4d4;
+    width: 100%;
+    padding: 10px 15px 15px 15px;
+    background-color: #d4d4d4;
+    border-radius: .25rem;
+}
+.register-box{
+    position: absolute; /*Can also be `fixed`*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding-top: 100px;
+  
+}
+.reg-form{
+    transform: none;
+    width: 750px;
+}
+@media all and (max-width:760px) {
+.reg-form {
+    transform: none;
+    width: 100%;
+    padding: 10px;
+}}
+
+.buttonmargin{
+    margin-left: 61px;
+}
+.textmargin{
+    margin-left: 74px;
+}
+.bg{
+    background-image: url("../../../../assets//img/loginbg.jpg");
+    height: 100%;
+}

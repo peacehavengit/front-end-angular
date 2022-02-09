@@ -1,0 +1,65 @@
+<div class="bg">
+    <div class="container ">
+        <div class="center">
+            <div class="data-form shadow">
+                <form #loginForm="ngForm" class="sign-up form" novalidate="novalidate" accept-charset="utf-8">
+
+                    <h1>Sign In</h1>
+                    <div class="form-group  first-child">
+                        <div class="input email ">
+                            <input name="email" [(ngModel)]="loginObj.email" #email="ngModel" required
+                                placeholder="Email Id" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,3}$"
+                                class="form-control" id="email" data-position="top" maxlength="255" type="email"
+                                autocomplete="off" (keyup)="clearError('email')" style="
+                     width: 100%;
+                 ">
+                        </div>
+                    </div>
+                    <div class="form-group  first-child">
+                        <div class="input password ">
+                            <input name="password" [(ngModel)]="loginObj.password" #password="ngModel" required
+                                pattern="(?=^.{6,50}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$"
+                                class="form-control"
+                                [ngClass]="{'customError': password.invalid && (password.dirty || password.touched)}"
+                                id="password" maxlength="50" minlength="6" placeholder="Password" type="password"
+                                (keyup)="clearError('password')" style="
+                 width: 100%;
+             ">
+                        </div>
+                    </div>
+
+
+                    <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
+                    <div class="text-center">
+                        <button type="submit" class="registerbtn" [disabled]="loginForm.invalid"
+                            (click)="loginfn()">Sign
+                            in
+                        </button>
+                    </div>
+
+
+                    <!-- <div class="container text-center" *ngIf="resend==='resend'">
+                  <button type="submit" class="link-btn mb-10px" (click)="ResendVerificationLink()"><a href="javascript:void(0)">Resend Verification
+                      Link</a></button>
+              </div> -->
+                    <div class="text-center">
+                        <!-- <button type="submit" class="link-btn mb-10px"><a routerLinkActive="active"
+                            routerLink='/forget-password'>Forget
+                            password?</a></button> -->
+                        <p class="mb-0"> New User? <a routerLinkActive="active" routerLink='/register'> Register
+                                here </a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- <div class="text-center mt-4">
+          <p>Copyright © 2020 Blockcities. All rights reserved.</p>
+      </div> -->
+
+        </div>
+        <!-- 
+  <div id="divLoading" *ngIf="loading">
+      <div class="loader login-left"></div>
+  </div> -->
+    </div>
+</div>

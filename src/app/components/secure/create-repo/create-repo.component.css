@@ -1,0 +1,42 @@
+.buytoken-form {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fdb38c;
+    color: #000;
+    background-position: revert;
+    width: 80%;
+    padding: 7rem;
+}
+.pt-12px {
+    padding-top: 12px;
+}
+.custom-margin {
+    background: #fafafa;
+}
+.gradbtn.btn-block {
+    padding: 10px;
+}
+.flex.font-mono.mt-5 {
+    font-size: 14px;
+}
+.roi-text p {
+    margin-bottom: 5px;
+}
+.flext-button button.btn {
+    flex: 1;
+    padding: 10px;
+}
+.flext-button {
+    display: flex;
+}
+@media (max-width: 767px) {
+    .buytoken-form i {
+        transform: rotate(90deg);
+        padding: 10px !important;
+    }
+}
+.war {
+    font-size: 13px;
+    color: red;
+    height: 0px;
+}

@@ -1,0 +1,58 @@
+<div id="wrapper" [ngClass]="status ? 'active' : '' ">
+    <div>
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <li class="navClose">
+                    <a routerLink='/dashboard' class="sidebar-content"><img src="../../../../assets/img/phlogo.png"
+                            class="logo">
+                        <p><b>PEACE HAVEN</b></p>
+                    </a>
+
+                </li>
+                <li class="navClose side-links">
+                    <a  routerLink='/dashboard' [routerLinkActive]="['active']" class="sidebar-content"><i
+                            class="fas fa-th-large"></i>
+                        <span>Dashboard</span></a>
+                </li>
+                <li class="navClose side-links">
+                    <a routerLink='/create' [routerLinkActive]="['active']"  class="sidebar-content"><i class="fas fa-shopping-bag"></i>
+                        <span>Create Repository</span></a>
+                </li>
+                <li class="navClose side-links">
+                    <a routerLink='/repositories' [routerLinkActive]="['active']"  class="sidebar-content"><i class="fas fa-money-check-alt"></i>
+                        <span>Repositories</span></a>
+                </li>
+                <li class="navClose side-links">
+                    <a routerLink='/profile' [routerLinkActive]="['active']" class="sidebar-content"><i class="fas fa-ticket-alt"></i>
+                        <span>Profile</span></a>
+                </li>
+                <li class="navClose side-links">
+                    <a routerLink='/settings' [routerLinkActive]="['active']" class="sidebar-content"><i
+                            class="fas fa-money-check-alt"></i>
+                        <span>Setting</span></a>
+                </li>
+
+                <li class="navClose side-links">
+                    <a routerLink='/support' [routerLinkActive]="['active']" class="sidebar-content"><i class="fas fa-history"></i>
+                        <span>Support</span></a>
+                </li>
+                <li class="navClose side-links">
+                    <a routerLink='/faq' [routerLinkActive]="['active']" class="sidebar-content"><i class="fas fa-history"></i>
+                        <span>FAQ</span></a>
+                </li>
+                <li class="mobile-view side-links"><a routerLink='/' (click)="auth.logout()"
+                        class="sidebar-content logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+            </ul>
+        </nav>
+        <div id="content" class="side-menu-btn close-btn">
+            <button type="button" id="sidebarCollapse" class="btn" (click)="clickEvent()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Page Content  -->
+    <div class="custom-margin">
+        <router-outlet></router-outlet>
+    </div>
+</div>

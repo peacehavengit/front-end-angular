@@ -1,0 +1,15 @@
+.buytoken-form{
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fdb38c;
+    color: #000;
+    background-position: revert;
+    width: 80%;
+    padding: 7rem;
+}
+
+.ptag{
+    text-align: center;
+    /* color: black; */
+    font-size: x-large;
+}

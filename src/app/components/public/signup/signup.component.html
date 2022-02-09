@@ -1,0 +1,145 @@
+<div class="bg">
+<div class="container position-relative">
+  <div class="register-box center reg-form">
+      <!-- <div class="logo">
+          <img src="../../assets/images/logo.png" alt="logo">
+      </div> -->
+      <div class="data-form shadow">
+          <form #signup="ngForm" class="sign-up form" novalidate="novalidate" accept-charset="utf-8">
+              <!-- <h1 >Re-Register</h1> -->
+              <h1 >Create Account</h1>
+              <!-- <p class="text-center">Please fill in this form to create an account.</p> -->
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group  first-child">
+                          <div class="input name">
+                              <input name="fname" [(ngModel)]="userobj.fname" #fname="ngModel" required
+                                  class="form-control" id="fname" data-position="top" minlength="2" maxlength="60"
+                                  placeholder="First Name" pattern="^([a-zA-Z]+[,.]?[ ]?|[a-zA-Z]+['-]?)+$"
+                                  autocomplete="off" (keyup)="clearError('fname');" style="
+                                  width: 100%;
+                              ">
+                              <div [ngClass]="{
+                                  'errormsg': fname.invalid && (fname.dirty || fname.touched),
+                                  'has-success': fname.valid && (fname.dirty || fname.touched)}"
+                                  *ngIf="fname.errors && (fname.dirty || fname.touched)">
+                                  <p *ngIf="fname.errors.required">First name is required</p>
+                                  <p *ngIf="fname.errors.pattern">Please enter your first name</p>
+                                  <p *ngIf="fname.errors.minlength && !fname.errors.pattern">Name must be at least 2
+                                      characters long.</p>
+                              </div>
+                              <div class="errormsg" *ngIf="errorObj.fname!==''">
+                                  <span>{{errorObj.fname}}</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group  first-child">
+                          <div class="input name">
+                              <input name="lname" [(ngModel)]="userobj.lname" #lname="ngModel" required
+                                  class="form-control" id="lname" data-position="top" minlength="2" maxlength="60"
+                                  placeholder="Last Name" pattern="^([a-zA-Z]+[,.]?[ ]?|[a-zA-Z]+['-]?)+$"
+                                  autocomplete="off" (keyup)="clearError('lname');"  style="
+                                  width: 100%;
+                              ">
+                              <div [ngClass]="{
+                                  'errormsg': lname.invalid && (lname.dirty || lname.touched),
+                                  'has-success': lname.valid && (lname.dirty || lname.touched)}"
+                                  *ngIf="lname.errors && (lname.dirty || lname.touched)">
+                                  <p *ngIf="lname.errors.required">Last name is required</p>
+                                  <p *ngIf="lname.errors.pattern">Please enter your last name</p>
+                                  <p *ngIf="lname.errors.minlength && !lname.errors.pattern">Name must be at least 2
+                                      characters long.</p>
+                              </div>
+                              <div class="errormsg" *ngIf="errorObj.lname!==''">
+                                  <span>{{errorObj.lname}}</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group  first-child">
+                  <!-- <div class="input name custom-inputbox" *ngIf="userid!=='' && userid!==null">
+                      {{userobj.email}}
+                  </div> -->
+                  <div class="input email">
+                      <input name="email" [(ngModel)]="userobj.email" #email="ngModel" required
+                          placeholder="Email Address" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z.-]+\.[a-zA-Z]{2,3}$"
+                          class="form-control" id="email" data-position="top" maxlength="255" type="email"
+                          autocomplete="off" (keyup)="clearError('email')"  style="
+                          width: 100%;
+                      "
+                          >
+                      <div [ngClass]="{
+                                    'errormsg': email.invalid && (email.dirty || email.touched),
+                                    'has-success': email.valid && (email.dirty || email.touched)}"
+                          *ngIf="email.errors && (email.dirty || email.touched)">
+                          <p *ngIf="email.errors.required">Email is required</p>
+                          <p *ngIf="email.errors.pattern">Please enter a valid email</p>
+                      </div>
+                      <div class="errormsg" *ngIf="errorObj.email!==''">
+                          <span>{{errorObj.email}}</span>
+                      </div>
+                      <!-- <div class="errormsg" *ngIf="emailError">
+                          <span>Email already exist! Please try another one.</span>
+                      </div> -->
+
+                  </div>
+              </div>
+              <div class="form-group  first-child">
+                  <div class="input password">
+                      <input name="password" [(ngModel)]="userobj.password" #password="ngModel"
+                          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$"
+                          class="form-control"
+                          [ngClass]="{'customError': password.invalid && (password.dirty || password.touched)}"
+                          id="password" maxlength="50" minlength="10" placeholder="Password" type="password"
+                          (keyup)="clearError('password')">
+                      <div [ngClass]="{
+                                    'errormsg': password.invalid && (password.dirty || password.touched),
+                                    'has-success': password.valid && (password.dirty || password.touched)}"
+                          *ngIf="password.errors && (password.dirty || password.touched)">
+                          <p *ngIf="password.errors.required">Password is required</p>
+                          <p *ngIf="password.errors.pattern">Please enter valid password</p>
+                          <p *ngIf="password.errors.minlength && !password.errors.pattern">Password must be at least 10
+                              characters long.
+                      </div>
+                      <div class="errormsg" *ngIf="errorObj.password!==''">
+                          <span>{{errorObj.password}}</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group  first-child">
+                  <div class="input cpassword">
+                      <input name="cpassword" [(ngModel)]="userobj.cpassword" #cpassword="ngModel" required
+                          class="form-control checkempty" id="cpassword" type="password" maxlength="50" minlength="6"
+                          placeholder="Confirm Password" (keyup)="clearError('cpassword')"
+                          (keyup)="matchPassword(userobj)">
+                      <div [ngClass]="{
+                                    'errormsg': cpassword.invalid && (cpassword.dirty || cpassword.touched),
+                                    'has-success': cpassword.valid && (cpassword.dirty || cpassword.touched)}"
+                          *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)">
+                          <p *ngIf="cpassword.errors.required">Confirm Password is required</p>
+                      </div>
+                      <div class="errormsg" *ngIf="errorObj.cpassword!==''">
+                          <span>{{errorObj.cpassword}}</span>
+                      </div>
+                  </div>
+              </div>
+              <p class="form-note">
+                  A valid password should contain a minimum length of 6 characters & meet the following criteria. A
+                  CAPITAL letter, a small letter, a number and a special character.
+              </p>
+              <div class="text-center">
+                  <button type="submit" class="registerbtn" [disabled]="signup.invalid"
+                      (click)="registration(signup)">Create Account</button>
+              </div>
+              <div class="container text-center">
+                  <p>Already have an account? <a routerLinkActive="active" routerLink='/'>Sign in</a></p>
+              </div>
+          </form>
+      </div>
+   
+  </div>
+</div>
+</div>
